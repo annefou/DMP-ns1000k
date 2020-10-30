@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://easydmp.no/plan/1244/generated.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Data Management Plan: Data Management Plan for streamlining research workflow in Geosciences (NS1000K)</title>
+    <style type="text/css">
+    body { margin: 4em; }
+    section { padding-bottom: 1em; }
+    table.metadata th { text-align:left; padding-right: 1ex; }
+    div.section-introduction { padding-bottom: 2em;}
+    div.answer { padding-bottom: 1em; }
+    div.note { padding-top: 1em; }
+    </style>
+</head>
+<body>
+  <header>
+    <h1>Data Management Plan: Data Management Plan for streamlining research workflow in Geosciences (NS1000K)</h1>
+    <table class="metadata">
+        <tbody><tr><th>Version</th><td>1</td></tr>
+        <tr>
+            <th>Template</th>
+            <td>Sigma2 Data Management Plan
+                
+            </td>
+        </tr>
+        <tr><th>Last modified date</th><td>2020-10-30 15:19:37Z</td></tr>
+        <tr><th>Last modified by</th><td>Anne Claire Fouilloux (a.c.fouilloux@geo.uio.no)</td></tr>
+        <tr><th>Last checked OK</th><td>2020-10-30 15:19:37Z</td></tr>
+        <tr><th>Editors</th><td>Anne Claire Fouilloux (a.c.fouilloux@geo.uio.no)</td></tr>
+    </tbody></table>
+  </header>
+  
+  <section>
+  <h2>1. General Project Information</h2>
+  
+  <div class="section-introduction">This section covers general details about your project.</div>
+  
+  <div class="canned_answers">
+  
+    
+    <div class="answer">
+        <h3 class="question">1.1 Please provide the name of your project.</h3>
+      <div class="canned">A framework for streamlining research workflow in Geosciences</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">1.2 Please provide a description of your project</h3>
+      <div class="canned">This project aims at developing a fully integrated computing framework for running Geosciences applications. Many scientists in Geosciences are still reluctant to use HPC resources, therefore being able to provide users with appropriate support is vital. When users have such expertise, they however spend a lot of time to set-up the same models on the same machines. Therefore, it is important not only to optimize user applications or models but to give an appropriate framework for running large simulations. The current bottleneck for most applications in Geosciences is to define efficient workflows (fetching input data, running parallel models, storing outputs data with data exploration facilities). In this project we aim at developing such framework for a range of known applications: openIFS (ECMWF forecast model), FLEXPART transport model (“FLEXible PARTicle dispersion model”), MITgcm (MIT General Circulation Model), WRF (Weather Research and Forecasting), ENKI (hydrological modelling toolbox and a hydrological forecasting system), CESM (Community Earth System Model) and ad-hoc user codes developed at the Geosciences Department. This framework will be used both for research and teaching (for instance GEF 4530 at the University of Oslo). We have successfully installed most of these applications on the targeted computing platforms and have started to write workflows in python scripting language. We will now continue our effort and put emphasis on how best use NorStore facilities in these workflows (and also for data exploration) as most of these models require a large volume of input data and generate large outputs to be analyzed.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">1.3 Which academic subject(s) does your project belong to?</h3>
+      <div class="canned">Climate Science</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">1.4 Please provide the name of the project principle investigator</h3>
+      <div class="canned">Anne Fouilloux</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">1.5 Please provide the funding sources for this project.</h3>
+      <div class="canned">Storage for master's students, new PhDs and postdocs are core activities supported by the department of Geosciences (as core activities).
+EOSC-Nordic: The EOSC-Nordic project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 857652.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">1.6 Who will be the Data Officer for your project?</h3>
+      <div class="canned">Anne Fouilloux (and at some point my replacement)</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">1.7 Does your project have the appropriate resources for the management of your data?</h3>
+      <div class="canned">Data management activities related to EOSC-Nordic are funded by EOSC-Nordic (staffing) while core activities related to education of students and researchers are funded by the department of Geosciences.
+
+For each folder, data creators are expected to generate a README file with a minimum information on the datasets. We encourage users to use the following template: https://cornell.app.box.com/v/ReadmeTemplate
+
+Data are archived as soon as possible i.e. as soon as consolidated datasets are produced: then these datasets become readonly (permissions changed on NIRD project area) and kept on NS1000K until scientists (or students) give their approval for removing data. Emails are sent every 6 months to all data "creators" so that we can get up to date information about their datasets.
+
+For publication, plots, codes (to generate plots) are sometimes added to the archive.
+
+Archiving after the end of a project is funded by the department of Geosciences.</div>
+    </div>
+    
+  
+  </div>
+  </section>
+  
+  <section>
+  <h2>2. Data</h2>
+  
+  <div class="section-introduction">This section covers the data that your project will create or use.</div>
+  
+  <div class="canned_answers">
+  
+    
+    <div class="answer">
+        <h3 class="question">2.1 Please describe how your project will create and/or reuse data.</h3>
+      <div class="canned">- Most data are Climate data (gridded data in netCDF format, following CF conventions) downloaded from ESGF nodes or from Copernicus Climate Data Store. These data can be easily retrieved again (it take a very long time but it is possible). netCDF format using CF-convention is standard within the Climate Science community.
+
+- observations: Different formats and provenance: BUFR, HDF5, netCDF, csv, textfile or binary (direct from instrument). Field observations are copied by individual researchers and the researcher will only published (archive in NIRD archive) datasets once the associated scientific publication is accepted in a journal. This means that there is usually a period of time during which the dataset is not used on the NIRD project and not archived yet (between 6 months to 1 years). When the format is not standard, decoded/cleaned datasets are usually archived along with the raw data.
+
+- containers: in the framework of reproducible research containers used for running Earth System Models (NorESM, CESM, WACCM) are also stored in the NIRD project area (docker &amp; singularity containers with intel compilers). Because we use intel compilers (and these compilers are part of the containers), we cannot make them publicly available. In a near future, all our containers will be provided with GNU compilers so that they can be made publicly available. We are planning to set-up (2021) a service similar to bio.tools but for the climate community. The procedures related to containers on NS1000K will then be reviewed (as much as possible containers will be archived).
+
+- personal files (related to individual research work, in particular master's students. To obtain their master thesis, master student needs to clear their storage area (remove unecessary files and archive data that need to be kept). Each master's student write a DMP (very simplified version that is mostly a README file as mentioned above). The Data manager of NS1000K has currently no possibility to review these DMPs and needs to trust master's students.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">2.2 Please describe how you will manage the intellectual property rights and ownership of your data.</h3>
+      <div class="canned">- Data downloaded from ESGF and/or Copernicus Climate Data Store come with their own license. 
+- Any derived products will follow the guidelines of the original license. Whenever possible Creative Commons Attribution 4.0 International (CC BY 4.0) license will be used.
+- Observations (from field research) usually use Creative Commons Attribution 4.0 International (CC BY 4.0)
+- IPR: University of Oslo.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">2.3 Describe how you will ensure compliance with legislation and institutional regulation?</h3>
+      <div class="canned">Unknown.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">2.4 Please describe any ethical issues that may affect your data.</h3>
+      <div class="canned">Not applicable.</div>
+    </div>
+    
+  
+  </div>
+  </section>
+  
+  <section>
+  <h2>3. Documentation and Metadata</h2>
+  
+  <div class="section-introduction">This section covers the information that will help you and your colleagues and other researchers to find and reuse your data.</div>
+  
+  <div class="canned_answers">
+  
+    
+    <div class="answer">
+        <h3 class="question">3.1 What metadata and documentation do you plan to provide with your data?</h3>
+      <div class="canned">one README file per sub-project: documentation for writing a README file is given at https://data.research.cornell.edu/content/readme
+Corresponding template: https://cornell.app.box.com/v/ReadmeTemplate
+
+For Earth System Models (NorESM, CESM, WACCM, etc.) standardized metadata is generated when data is produced (where the model is run).</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">3.2 What data quality measures will you use for your data?</h3>
+      <div class="canned">- Climate data that are downloaded from ESGF / Copernicus data store are not checked by us because they are already check by the data provider (data is coming from authoritative climate providers)
+
+- raw data (observations) are not quality checked: raw data are meant to be archived without being manipulated. The only check we do is related to the filesize / checksum.
+- Data (observations, researcher model runs, etc.) come along with a scientific publications where any quality control procedures will be described. Quality control procedures depend on the variables (temperature, winds, etc.) and instruments. Full reference to use quality procedure is mentioned in the publications associated to the dataset.
+
+- For climate data generated by NorESM, we are working on the standardization of all the variables (same as it is done during CMIP). However, we will also always archive raw data for future reference.</div>
+    </div>
+    
+  
+  </div>
+  </section>
+  
+  <section>
+  <h2>4. Storage</h2>
+  
+  <div class="section-introduction">This section covers how you will store your data.</div>
+  
+  <div class="canned_answers">
+  
+    
+    <div class="answer">
+        <h3 class="question">4.1 Where will you store your data?</h3>
+      <div class="canned">NIRD</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">4.1.1 Please provide your NIRD project ID</h3>
+      <div class="canned">NS1000K</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">4.1.2 Which NIRD services do you intend to use (please select all that apply)?</h3>
+      <div class="canned">Computing Resources, Course Resource as a Service, Data Storage, easyDMP - Data Planning, NIRD Toolkit and Research Data Archive</div>
+    </div>
+    
+  
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">4.2 How much data do you plan to store each year from 2020-2024?</h3>
+      <div class="canned"><p>Storage forecast:</p>
+<ul class="storage-estimate">
+    <li>2020: 35 TiB, backup = 0%</li>
+
+    <li>2021: 35 TiB, backup = 0%</li>
+
+    <li>2022: 35 TiB, backup = 0%</li>
+
+    <li>2023: 35 TiB, backup = 0%</li>
+
+    <li>2024: 35 TiB, backup = 0%</li>
+</ul>
+</div>
+      <div class="note">Note: Our goal is to apply strict rule for the Data management of our data and we should not increase in size.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">4.3 What will you primarily use the storage for?</h3>
+      <div class="canned">Computing (including HPC) input and output and Sharing data</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">4.3.1 How much data do you intend to transfer to/from the Computing platform?</h3>
+      <div class="canned">1 to 10TB</div>
+      <div class="note">Note: Transfers usually occur when teaching how to use Earth System Models to Master students (Springs). Outside this period, very little is produced and transfered from the HPC to NIRD.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">4.4 Please briefly describe how you will ensure the safety of your data.</h3>
+      <div class="canned">- Climate data downloaded from ESGF/Copernicus Climate data do not need any backup as they can be downloaded again. 
+
+- Observations from researchers have a backup on University of Oslo storage systems.
+
+- Model outputs can be re-generated if necessary.</div>
+    </div>
+    
+  
+  </div>
+  </section>
+  
+  <section>
+  <h2>5. End of project</h2>
+  
+  <div class="section-introduction">This section covers end of your project where your findings on your data have been published.</div>
+  
+  <div class="canned_answers">
+  
+    
+    <div class="answer">
+        <h3 class="question">5.1 Do you plan to make some/all of your data available to others?</h3>
+      <div class="canned">Yes, all/some</div>
+      <div class="note">Note: Most of our data is available to users having access to NIRD toolkit Jupyterhub. As part of NeIC NICEST2 &amp; EOSC-Nordic, we are working on the FAIRification of Climate data (those not part of CMIPs).</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">5.1.1 How will you make your data accessible?</h3>
+      <div class="canned">NIRD Archive and Other (please specify in More Information below)</div>
+      <div class="note">Note: - NIRD archive: for large datasets (generated from Earth System Models)
+- zenodo (https://zenodo.org/): for small datasets (&lt;50GB)
+- pangea archive (https://www.pangaea.de/): for project with collaboration with German partners.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">5.1.2 Describe how you will select the data for reuse and ensure it can be reused?</h3>
+      <div class="canned">- All data with associated scientific papers: as part of the publication process, datasets need to be archived prior to publication
+- Data generated from matser students (usually also archived on local servers) and of interest for future Master projects.
+- Observations: always archived (after publication of scientific results).
+
+Data is always archived in a standard formats (gridded data in netCDF format with CF convention or WMO GRIB1/2 format; observations in BUFR, csv or text format); satellite images in GeoTIFF or HDF5 format. These standard formats are well established and tools for reading/writing these datasets are commonly available and maintained by the International Climate community.</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">5.1.3 When will your data be available for reuse?</h3>
+      <div class="canned">At the end of the project and after an embargo period.</div>
+      <div class="note">Note: - For observations: At the end of the project and after an embargo period.
+- For model outputs: As soon as the data has been analysed (check done that it is OK).</div>
+    </div>
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">5.1.4 Apart from a possible embargo period, are there any other restrictions on the reuse of your data?</h3>
+      <div class="canned">NO.</div>
+    </div>
+    
+  
+    
+  
+    
+    <div class="answer">
+        <h3 class="question">5.2 Please provide any additional information you think is relevant to your plan.</h3>
+      <div class="canned">No additional relevant information provided.</div>
+    </div>
+    
+  
+  </div>
+  </section>
+  
+
+
+</body></html>
